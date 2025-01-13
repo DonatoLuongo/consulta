@@ -1,0 +1,378 @@
+/* Asegura que el cuerpo de la página ocupe al menos el 100% de la altura de la pantalla */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Permite que el contenido y footer se alineen verticalmente */
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la pantalla */
+}
+
+/* Header de la web */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo vertical del Header */
+.logo {
+  width: 250px;
+  padding-left: 7%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 80px;
+  margin-right: 10px;
+}
+
+main {
+  text-align: center;
+  padding: 50px 20px;
+  flex-grow: 1; /* Hace que el main ocupe el espacio restante */
+}
+
+/* Para cambiarle el color al titulo del status de la info del cuadro de detalle de la remesa */
+.statuss {
+  color: #971111;
+}
+
+.content-section {
+  margin-top: -5%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-section {
+  width: 50%;
+  text-align: left;
+}
+
+.text-section h2 {
+  font-size: 2em;
+  color: #333;
+  background-color: #F1FBFF;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.text-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+  /* Coloca los inputs en una fila */
+  align-items: center;
+  /* Alinea los inputs verticalmente */
+  border: 1px solid #fff;
+  border-radius: 13px;
+  padding: 5px;
+}
+
+.search-bar input {
+  padding: 12px;
+  border: 1px solid #cbcbcb74;
+  outline: none;
+  border-radius: 10px;
+  width: 45%;
+  /* Asegura que ambos inputs tengan un tamaño similar */
+}
+
+.search-bar input+input {
+  margin-left: 10px;
+  /* Espacio entre los inputs */
+}
+
+.search-bar input:focus {
+  border: 1px solid #07ABDD;
+  /* Bordes cuando el input está en foco */
+}
+
+/* Estilo para el botón */
+.buscr button {
+  padding: 10px;
+  background-color: #07ABDD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.image-section {
+  width: 70%;
+  padding-right: 1%;
+  text-align: right;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-result {
+  margin-top: 20px;
+  color: red;
+}
+
+.decorative-figures {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.decorative-figures div {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+}
+
+.figure1 {
+  width: 50px;
+  height: 50px;
+  top: 20%;
+  left: 10%;
+}
+
+.figure2 {
+  width: 30px;
+  height: 30px;
+  top: 40%;
+  left: 80%;
+}
+
+
+
+/* Detalles de toda la información */
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  max-width: 1000px;
+  margin: 15px auto;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.head h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  flex: 1;
+}
+
+.ultimo-status {
+  color: #971111;
+  /* Cambia este código de color al que prefieras */
+}
+
+.logito {
+  width: 50px;
+  height: auto;
+}
+
+.remisiones {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que los elementos se ajusten en lugar de desbordarse */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte al ancho total */
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .detail-item {
+    flex: 1 0 100%;
+    /* Asegura que cada item ocupe el 100% del ancho disponible */
+    margin: 5px 0;
+    /* Reduce los márgenes entre los items */
+  }
+
+  .detail-row {
+    flex-direction: column;
+    /* Acomoda las filas verticalmente en pantallas pequeñas */
+    align-items: flex-start;
+    /* Alinea los elementos a la izquierda */
+  }
+}
+
+
+.detail-item h3 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.detail-item i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="email"] {
+  padding: 10px;
+  width: calc(100% - 220px);
+  max-width: 500px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.novelty {
+  margin-top: 20px;
+}
+
+.novelty h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.novelty ul {
+  list-style: none;
+  padding: 0;
+}
+
+.novelty li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.novelty span {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Estilo para los iconos y los nuevos campos */
+.detail-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #303030;
+}
+
+.novelty ul li span {
+  font-size: 14px;
+  color: #888;
+}
+
+.novelty p {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+/* Agrega un borde a los botones */
+/* Estilo para el mensaje de error */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Estilo para el loader */
+.loader {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #007bff;
+}
+
+
+
+/* Footer */
+footer {
+  font-size: 1rem;  /* Usa rem para el tamaño de la fuente */
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  color: #303030;
+  box-sizing: border-box; /* Para evitar que el padding afecte el tamaño total */
+  width: 100%; /* Asegura que el footer ocupe todo el ancho de la pantalla */
+  position: relative; /* Permite que el footer se posicione correctamente al final */
+}
+
+footer p {
+  margin: 0; /* Elimina el margen por defecto en el párrafo */
+}
+
+/* Para hacerlo más responsivo */
+@media (max-width: 767px) {
+  footer {
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    padding: 15px; /* Ajusta el padding en pantallas pequeñas */
+  }
+}

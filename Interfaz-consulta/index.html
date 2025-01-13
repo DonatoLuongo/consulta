@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transportadora Mercantil - Rastrea tu envío</title>
+  <link rel="stylesheet" href="CSS/styles.css"> <!-- CSS -->
+  <link rel="icon" href="IMG/LogoWeb.png" type="image/png"> <!-- Logo de la web -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="IMG/Logo-vertical.png" alt="Logo">
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <div class="text-section">
+        <h2>Nuestros Servicios de Logística y Transporte para tu Negocio en Colombia</h2>
+        <p>Ingresa número de remesa y NIT para rastrear tu envío</p>
+        <div class="search-bar">
+          <input id="nitInput" type="number" placeholder="Ingrese el número NIT">
+          <input id="remesaInput" type="number" placeholder="Ingrese el número de remesa">
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+        <div class="buscr">
+          <button id="searchButton" onclick="searchData()">Buscar</button>
+        </div>
+        <div id="searchResult" class="search-result"></div>
+        <div id="loadingMessage" class="loader" style="display: none;">Cargando...</div> <!-- Mensaje de carga -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div> <!-- Mensaje de error -->
+
+      </div>
+      <div class="image-section">
+        <img src="IMG/envio.png" alt="Persona cargando cajas">
+      </div>
+    </section>
+  </main>
+
+  <div class="container" style="display: none;">
+    <div class="head">
+      <h2>SEGUIMIENTO DE LA REMESA</h2>
+      <img src="IMG/LogoWeb.png" alt="Logo" class="logito" />
+    </div>
+    <p class="remisiones">Remisiones: <span id="remisiones"></span></p>
+    <div class="details">
+      <div class="detail-row">
+        <div class="detail-item remitente">
+          <h3><i class="fas fa-box"></i> REMITE/ORIGEN</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <strong>Ciudad de Origen:</strong> <span
+              id="remitente-ciudad"></span></p>
+          <p><i class="fas fa-user"></i> <strong>Nombre Contacto:</strong> <span id="remitente-contacto"></span></p>
+          <p><i class="fas fa-calendar-day"></i> <strong>Fecha de Solicitud:</strong> <span id="remitente-fecha"></span>
+          </p>
+          <p><i class="fas fa-map"></i> <strong>Dirección:</strong> <span id="remitente-direccion"></span></p>
+          <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <span id="remitente-telefono"></span></p>
+          <p><i class="fas fa-id-badge"></i> <strong>NIT/CC:</strong> <span id="remitente-nit"></span></p>
+        </div>
+        <div class="detail-item destinatario">
+          <h3><i class="fas fa-box"></i> DESTINATARIO/DESTINO</h3>
+          <p><i class="fas fa-map-marker-alt"></i> <strong>Ciudad de Destino:</strong> <span
+              id="destinatario-ciudad"></span></p>
+          <p><i class="fas fa-user"></i> <strong>Nombre Contacto:</strong> <span id="destinatario-contacto"></span></p>
+          <p><i class="fas fa-calendar-day"></i> <strong>Fecha de Recibido:</strong> <span
+              id="destinatario-fecha"></span></p>
+          <p><i class="fas fa-map"></i> <strong>Dirección:</strong> <span id="destinatario-direccion"></span></p>
+          <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <span id="destinatario-telefono"></span></p>
+          <p><i class="fas fa-id-badge"></i> <strong>NIT/CC:</strong> <span id="destinatario-nit"></span></p>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item fechaEnvio">
+          <h3><i class="fas fa-calendar-alt"></i> FECHAS DE LA REMESA</h3>
+          <p><strong>Fecha de Envío:</strong> <span id="fecha-envio"></span></p>
+          <p><strong>Fecha Estimada de Entrega:</strong> <span id="fecha-estimada"></span></p>
+          <p><strong>Fecha Final de Entrega:</strong> <span id="fecha-final"></span></p>
+          <p><strong class="statuss">Último Status:</strong> <span id="ultimo-status"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="novelty">
+      <h3><i class="fas fa-info-circle"></i> Novedades:</h3>
+      <ul id="novedades"></ul>
+    </div>
+    <div class="detail-row">
+      <div class="detail-item">
+        <h3><i class="fas fa-paperclip"></i> CUMPLIDO</h3>
+        <p><strong>Soportes Adjuntos:</strong>
+          <a id="pdf-link" href="https://oet-avansat5.intrared.net:8083/ap/spyme_mercan/gesdoc/2024/11/remesa/20241128083232a874f83e.pdf" download target="_blank">Ver Documento</a>
+        </div>
+    </div>
+    
+    <div class="actions">
+      <button class="print-button" onclick="printTable()">Imprimir</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Transportadora Mercantil. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Cargar html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <!-- Cargar jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+  <script src="/JS/script.js"></script>
+</body>
+
+</html>
